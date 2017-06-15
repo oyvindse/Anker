@@ -1,0 +1,5 @@
+<resources>
+    <bitmaps>
+        <bitmap id="id_anchor" filename="images/anchor.png"/>
+    </bitmaps>
+</resources>
