@@ -6,7 +6,7 @@ using Toybox.Lang as Lang;
 using Toybox.Application as App;
 using Toybox.Time as Time;
 
-class AnchorView extends Ui.WatchFace
+class AnkerView extends Ui.WatchFace
 {
     var bmp;
 
@@ -16,7 +16,7 @@ class AnchorView extends Ui.WatchFace
     
     function onLayout(dc)
     {
-        bmp = Ui.loadResource(Rez.Drawables.id_anchor);
+        bmp = Ui.loadResource(Rez.Drawables.Anchor);
     }
 
     function onShow()
@@ -68,25 +68,5 @@ class AnchorView extends Ui.WatchFace
 
         return Lang.format("$1$", [info.month]);
 
-    }
-}
-
-class AnchorFace extends App.AppBase
-{
-	function initialize() {
-        AppBase.initialize();
-    }
-    
-    function onStart(state)
-    {
-    }
-
-    function getInitialView()
-    {
-        return [new AnchorView()];
-    }
-
-    function onStop(state)
-    {
     }
 }
