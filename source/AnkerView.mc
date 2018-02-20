@@ -34,22 +34,16 @@ class AnkerView extends Ui.WatchFace
         dc.drawText(dc.getWidth()-50, (dc.getHeight() - dc.getHeight() / 2) , Gfx.FONT_SMALL, getDay(), Gfx.TEXT_JUSTIFY_CENTER);
         dc.drawBitmap(dc.getWidth() / 2 - bmp.getWidth() / 2, dc.getHeight() / 2 - dc.getHeight() / 6 - bmp.getHeight() / 2, bmp);
     }
-
-    hidden function makeClockTime()
-    {
-        var clockTime = Sys.getClockTime();
-        var hour, min, result;
-
-        hour = clockTime.hour;
-        min = clockTime.min;
-
-        return Lang.format("$1$:$2$",[hour, min.format("%02d")]);
-    }
    	
    	hidden function getTime()
     {
         var clockTime = Sys.getClockTime();
-        return clockTime.hour.format("%02d") + ":" + clockTime.min.format("%02d");
+        var hour = clockTime.hour;
+        if(!System.getDeviceSettings().is24Hour && hour > 12) {
+        	hour = hour - 12;
+        }
+        
+        return hour.format("%02d") + ":" + clockTime.min.format("%02d");
     }
     
     hidden function getDay()
@@ -58,7 +52,6 @@ class AnkerView extends Ui.WatchFace
         var info = Time.Gregorian.info(now, Time.FORMAT_LONG);
 
         return Lang.format("$1$", [info.day]);
-
     }
     
     hidden function getMonth()
@@ -67,6 +60,5 @@ class AnkerView extends Ui.WatchFace
         var info = Time.Gregorian.info(now, Time.FORMAT_LONG);
 
         return Lang.format("$1$", [info.month]);
-
     }
 }
