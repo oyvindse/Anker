@@ -17,6 +17,8 @@ class AnkerView extends Ui.WatchFace
     function onLayout(dc)
     {
         bmp = Ui.loadResource(Rez.Drawables.Anchor);
+        
+        setLayout(Rez.Layouts.WatchFace(dc));
     }
 
     function onShow()
@@ -29,10 +31,17 @@ class AnkerView extends Ui.WatchFace
         dc.clear();
         dc.setColor(Gfx.COLOR_WHITE, Gfx.COLOR_BLACK);
         
-        dc.drawText(dc.getWidth()/2, (dc.getHeight() - dc.getHeight() / 2.5) , Gfx.FONT_NUMBER_HOT, getTime(), Gfx.TEXT_JUSTIFY_CENTER);
-        dc.drawText(50, (dc.getHeight() - dc.getHeight() / 2) , Gfx.FONT_SMALL, getMonth(), Gfx.TEXT_JUSTIFY_CENTER);
-        dc.drawText(dc.getWidth()-50, (dc.getHeight() - dc.getHeight() / 2) , Gfx.FONT_SMALL, getDay(), Gfx.TEXT_JUSTIFY_CENTER);
-        dc.drawBitmap(dc.getWidth() / 2 - bmp.getWidth() / 2, dc.getHeight() / 2 - dc.getHeight() / 6 - bmp.getHeight() / 2, bmp);
+        // Trying to use Layout xml
+        var timeDisplay = View.findDrawableById("TimeLabel");
+        timeDisplay.setText(getTime());
+        
+        var monthDisplay = View.findDrawableById("MonthLabel");
+        monthDisplay.setText(getMonth());
+        
+        var dateDisplay = View.findDrawableById("DateLabel");
+        dateDisplay.setText(getDay());
+        
+        View.onUpdate(dc);
     }
    	
    	hidden function getTime()

@@ -1,0 +1,6 @@
+<layout id="WatchFace">
+	<bitmap id="AnchorYeah" x="center" y="10" filename="../../resources/drawables/anchor.png" dithering="none" />
+    <label id="TimeLabel" x="center" y="144" font="Gfx.FONT_NUMBER_HOT" justification="Gfx.TEXT_JUSTIFY_CENTER" color="Gfx.COLOR_WHITE" />
+    <label id="MonthLabel" x="55" y="109" font="Gfx.FONT_SMALL" justification="Gfx.TEXT_JUSTIFY_CENTER" color="Gfx.COLOR_WHITE" />
+    <label id="DateLabel" x="184" y="109" font="Gfx.FONT_SMALL" justification="Gfx.TEXT_JUSTIFY_CENTER" color="Gfx.COLOR_WHITE" />
+</layout>
