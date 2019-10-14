@@ -1,3 +1,13 @@
 <strings>
     <string id="AppName">Anker</string>
+    
+    <string id="TimeColor">Time color</string>
+	<string id="MonthColor">Month color</string>
+	<string id="DayColor">Day color</string>
+	<string id="AnchorColor">Anchor color</string>
+	<string id="BackgroundColor">Background color</string>
+	
+	<string id="Black">Black</string>
+    <string id="White">White</string>
+    <string id="Blue">Blue</string>
 </strings>

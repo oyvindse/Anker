@@ -1,0 +1,36 @@
+<settings>
+	<setting propertyKey="@Properties.TimeColor" title="@Strings.TimeColor">
+    	<settingConfig type="list">
+    		<listEntry value="0xFFFFFF">@Strings.White</listEntry>
+    		<listEntry value="0x0000FF">@Strings.Blue</listEntry>
+    	</settingConfig>
+    </setting>
+    
+    <setting propertyKey="@Properties.MonthColor" title="@Strings.MonthColor">
+    	<settingConfig type="list">
+    		<listEntry value="0xFFFFFF">@Strings.White</listEntry>
+    		<listEntry value="0x0000FF">@Strings.Blue</listEntry>
+    	</settingConfig>
+    </setting>
+    
+    <setting propertyKey="@Properties.DayColor" title="@Strings.DayColor">
+    	<settingConfig type="list">
+    		<listEntry value="0xFFFFFF">@Strings.White</listEntry>
+    		<listEntry value="0x0000FF">@Strings.Blue</listEntry>
+    	</settingConfig>
+    </setting>
+    
+    <setting propertyKey="@Properties.AnchorColor" title="@Strings.AnchorColor">
+        <settingConfig type="list">
+    		<listEntry value="0">@Strings.White</listEntry>
+    		<listEntry value="1">@Strings.Blue</listEntry>
+    	</settingConfig>
+    </setting>
+    
+    <setting propertyKey="@Properties.BackgroundColor" title="@Strings.BackgroundColor">
+    	<settingConfig type="list">
+    		<listEntry value="0x000000">@Strings.Black</listEntry>
+    		<listEntry value="0xFFFFFF">@Strings.White</listEntry>
+    	</settingConfig>
+    </setting>
+</settings>

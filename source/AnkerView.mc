@@ -6,17 +6,16 @@ using Toybox.Lang as Lang;
 using Toybox.Application as App;
 using Toybox.Time as Time;
 
+var gBackgroundColor;
+
 class AnkerView extends Ui.WatchFace
 {
-    var bmp;
-
 	function initialize() {
         WatchFace.initialize();
     }
     
     function onLayout(dc)
     {
-        bmp = Ui.loadResource(Rez.Drawables.Anchor);
         
         setLayout(Rez.Layouts.WatchFace(dc));
     }
@@ -27,18 +26,24 @@ class AnkerView extends Ui.WatchFace
 
     function onUpdate(dc)
     {
-        dc.setColor(Gfx.COLOR_BLACK, Gfx.COLOR_BLACK);
-        dc.clear();
+    	var timeColor = App.getApp().getProperty("TimeColor").toNumber();
+        var monthColor = App.getApp().getProperty("MonthColor").toNumber();
+        var dayColor = App.getApp().getProperty("DayColor").toNumber();
+       	gBackgroundColor = App.getApp().getProperty("BackgroundColor").toNumber();
+    
         dc.setColor(Gfx.COLOR_WHITE, Gfx.COLOR_BLACK);
+        dc.clear();
         
-        // Trying to use Layout xml
         var timeDisplay = View.findDrawableById("TimeLabel");
+        timeDisplay.setColor(timeColor);
         timeDisplay.setText(getTime());
         
         var monthDisplay = View.findDrawableById("MonthLabel");
+        monthDisplay.setColor(monthColor);
         monthDisplay.setText(getMonth());
         
         var dateDisplay = View.findDrawableById("DateLabel");
+        dateDisplay.setColor(dayColor);
         dateDisplay.setText(getDay());
         
         View.onUpdate(dc);
