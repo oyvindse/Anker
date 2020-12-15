@@ -2,6 +2,7 @@
     <iq:application entry="AnkerApp" id="3d30e256e94f45168d8701637c8aece5" launcherIcon="@Drawables.LauncherIcon" minSdkVersion="1.4.0" name="@Strings.AppName" type="watchface">
         <iq:products>
             <iq:product id="approachs60"/>
+            <iq:product id="approachs62"/>
             <iq:product id="d2bravo"/>
             <iq:product id="d2bravo_titanium"/>
             <iq:product id="d2charlie"/>
@@ -29,6 +30,7 @@
             <iq:product id="fr945"/>
             <iq:product id="legacyherocaptainmarvel"/>
             <iq:product id="legacyherofirstavenger"/>
+            <iq:product id="legacysagadarthvader"/>
             <iq:product id="marqathlete"/>
             <iq:product id="marqaviator"/>
             <iq:product id="marqcaptain"/>
