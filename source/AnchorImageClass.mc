@@ -19,7 +19,11 @@ class AnchorImageClass extends Ui.Drawable {
 	        // and location values may be defined.
 	        Drawable.initialize(params);
 	     
+		if ( Toybox.Application has :Storage ) {
+  	    	anchorStyle = App.Properties.getValue("AnchorColor");
+		} else {
 	        anchorStyle = App.getApp().getProperty("AnchorColor");
+		}
 	        bmp = anchorStyle == 0 ? Ui.loadResource(Rez.Drawables.Anchor) : Ui.loadResource(Rez.Drawables.AnchorBlue);
     }
     

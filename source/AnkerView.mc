@@ -7,6 +7,9 @@ using Toybox.Application as App;
 using Toybox.Time as Time;
 
 var gBackgroundColor;
+var timeColor;
+var monthColor;
+var dayColor;
 
 class AnkerView extends Ui.WatchFace
 {
@@ -16,7 +19,6 @@ class AnkerView extends Ui.WatchFace
     
     function onLayout(dc)
     {
-        
         setLayout(Rez.Layouts.WatchFace(dc));
     }
 
@@ -26,23 +28,30 @@ class AnkerView extends Ui.WatchFace
 
     function onUpdate(dc)
     {
-    	var timeColor = App.getApp().getProperty("TimeColor").toNumber();
-        var monthColor = App.getApp().getProperty("MonthColor").toNumber();
-        var dayColor = App.getApp().getProperty("DayColor").toNumber();
-       	gBackgroundColor = App.getApp().getProperty("BackgroundColor").toNumber();
+        if (Toybox.Application has :Storage) {
+    	    timeColor = App.Properties.getValue("TimeColor").toNumber();
+            monthColor = App.Properties.getValue("MonthColor").toNumber();
+            dayColor = App.Properties.getValue("DayColor").toNumber();
+       	    gBackgroundColor = App.Properties.getValue("BackgroundColor").toNumber();
+        } else {
+            timeColor = App.getApp().getProperty("TimeColor").toNumber();
+            monthColor = App.getApp().getProperty("MonthColor").toNumber();
+            dayColor = App.getApp().getProperty("DayColor").toNumber();
+       	    gBackgroundColor = App.getApp().getProperty("BackgroundColor").toNumber();    
+        }
     
         dc.setColor(Gfx.COLOR_WHITE, Gfx.COLOR_BLACK);
         dc.clear();
         
-        var timeDisplay = View.findDrawableById("TimeLabel");
+        var timeDisplay = View.findDrawableById("TimeLabel") as Ui.Text;
         timeDisplay.setColor(timeColor);
         timeDisplay.setText(getTime());
         
-        var monthDisplay = View.findDrawableById("MonthLabel");
+        var monthDisplay = View.findDrawableById("MonthLabel") as Ui.Text;
         monthDisplay.setColor(monthColor);
         monthDisplay.setText(getMonth());
         
-        var dateDisplay = View.findDrawableById("DateLabel");
+        var dateDisplay = View.findDrawableById("DateLabel") as Ui.Text;
         dateDisplay.setColor(dayColor);
         dateDisplay.setText(getDay());
         

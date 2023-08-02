@@ -1,11 +1,12 @@
 <layout id="WatchFace">
 	<drawable class="Background" />
-	
-    <label id="TimeLabel" x="center" y="130.8" font="Gfx.FONT_NUMBER_HOT" justification="Gfx.TEXT_JUSTIFY_CENTER" color="Gfx.COLOR_WHITE" />
+	<drawable id="AnchorImage" class="AnchorImageClass"> 
+        <param name="testParam">"Hello Custom Drawable!"</param>
+    </drawable>
+    
+    <label id="TimeLabel" x="center" y="131" font="Gfx.FONT_NUMBER_HOT" justification="Gfx.TEXT_JUSTIFY_CENTER" color="Gfx.COLOR_WHITE" />
     <label id="MonthLabel" x="50" y="109" font="Gfx.FONT_SMALL" justification="Gfx.TEXT_JUSTIFY_CENTER" color="Gfx.COLOR_WHITE" />
     <label id="DateLabel" x="168" y="109" font="Gfx.FONT_SMALL" justification="Gfx.TEXT_JUSTIFY_CENTER" color="Gfx.COLOR_WHITE" />
     
-    <drawable id="AnchorImage" class="AnchorImageClass"> 
-        <param name="testParam">"Hello Custom Drawable!"</param>
-    </drawable>
+    
 </layout>
