@@ -5,7 +5,5 @@
     <label id="MonthLabel" x="60" y="109" font="Gfx.FONT_SMALL" justification="Gfx.TEXT_JUSTIFY_CENTER" color="Gfx.COLOR_WHITE" />
     <label id="DateLabel" x="210" y="109" font="Gfx.FONT_SMALL" justification="Gfx.TEXT_JUSTIFY_CENTER" color="Gfx.COLOR_WHITE" />
     
-    <drawable id="AnchorImage" class="AnchorImageClass"> 
-        <param name="testParam">"Hello Custom Drawable!"</param>
-    </drawable>
+    <drawable id="AnchorImage" class="AnchorImageClass" />
 </layout>

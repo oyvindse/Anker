@@ -1,0 +1,9 @@
+<layout id="WatchFace">
+	<drawable class="Background" />
+	
+    <label id="TimeLabel" x="center" y="225" font="Gfx.FONT_NUMBER_HOT" justification="Gfx.TEXT_JUSTIFY_CENTER" color="Gfx.COLOR_WHITE" />
+    <label id="MonthLabel" x="88" y="170" font="Gfx.FONT_SMALL" justification="Gfx.TEXT_JUSTIFY_CENTER" color="Gfx.COLOR_WHITE" />
+    <label id="DateLabel" x="320" y="170" font="Gfx.FONT_SMALL" justification="Gfx.TEXT_JUSTIFY_CENTER" color="Gfx.COLOR_WHITE" />
+    
+    <drawable id="AnchorImage" class="AnchorImageClass" />
+</layout>
